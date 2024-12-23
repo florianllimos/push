@@ -1,0 +1,54 @@
+/* Conteneur pour le mouvement 3D */
+body {
+  display: grid;
+  align-items: center;
+  justify-self: center;
+}
+
+.card-container {
+  perspective: 1000px; /* Nécessaire pour l'effet 3D */
+  display: inline-block;
+}
+
+/* Carte avec un effet 3D */
+.card {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 5px solid rgb(196, 179, 27);
+  padding: 5px;
+  height: 400px;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  transform-style: preserve-3d; /* Conserve les enfants en 3D */
+  transform: rotateX(0deg) rotateY(0deg); /* Position initiale */
+  transition: transform 0.1s ease-out; /* Transition douce */
+}
+
+.hidden {
+  display: none !important;
+}
+
+.container-top {
+  display: grid;
+  grid-template-columns: [a] 1fr [b] 1fr [c];
+  justify-items: center;
+  align-items: center;
+}
+
+/* Image Pokémon */
+.card img {
+  width: 80%;
+  margin-left: 10%;
+  transform: translateZ(50px); /* Élévation en 3D */
+}
+
+/* Nom et stats en relief */
+.pokemon-name,
+.pokemon-stats {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2em;
+  transform: translateZ(30px); /* Élévation en 3D */
+}
